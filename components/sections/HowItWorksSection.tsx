@@ -55,7 +55,7 @@ export function HowItWorksSection() {
     if (!line) return
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduced) { line.style.scaleX = '1'; return }
+    if (prefersReduced) { line.style.transform = 'scaleX(1)'; return }
 
     gsap.set(line, { scaleX: 0, transformOrigin: 'left center' })
 
