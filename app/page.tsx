@@ -37,6 +37,26 @@ export default function Home() {
         <BriqlyCTABanner />
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Krevus",
+            "url": "https://krevus.org",
+            "logo": "https://krevus.org/krevus-logo.png",
+            "description": "B2B software agency building secure client portals, AI automation, and digital infrastructure for tax firms, fintech companies, and real estate businesses.",
+            "sameAs": ["https://www.linkedin.com/company/krevus"],
+            "areaServed": { "@type": "Country", "name": "US" },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "3"
+            }
+          })
+        }}
+      />
     </>
   )
 }

@@ -7,9 +7,13 @@ import { Home, MessageSquare } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Digital Infrastructure for Real Estate | Krevus',
-  description: 'Capture leads with AI and provide real-time property portals for your clients.',
-  openGraph: { url: 'https://krevus.org/industries/real-estate' },
+  title: 'AI Lead Capture & Property Portals for Real Estate | Krevus',
+  description: 'Losing high-value leads after hours? Krevus builds 24/7 AI lead qualification agents and exclusive property portals for top brokerages. See how we automate.',
+  openGraph: { 
+    title: 'AI Lead Capture & Property Portals for Real Estate | Krevus',
+    description: 'Losing high-value leads after hours? Krevus builds 24/7 AI lead qualification agents and exclusive property portals for top brokerages. See how we automate.',
+    url: 'https://krevus.org/industries/real-estate' 
+  },
 }
 
 const realEstateFeatures = [

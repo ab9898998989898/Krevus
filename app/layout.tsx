@@ -20,11 +20,30 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://krevus.org'),
-  title: 'Krevus — AI Automation & Secure Portals for Tax Firms, Fintech & Real Estate',
-  description: 'Krevus builds secure portals, AI automation, and digital infrastructure for tax firms, fintech companies, and real estate businesses.',
+  title: 'Krevus | Secure Portals & AI Automation for CPA, Fintech & Real Estate',
+  description: 'Drowning in unsecure emails and manual tasks? We build enterprise secure portals & AI automation for CPA, fintech, & real estate firms. Scale securely today.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    url: 'https://krevus.org',
+    url: '/',
     siteName: 'Krevus',
+    title: 'Krevus | Secure Portals & AI Automation for CPA, Fintech & Real Estate',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Krevus',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Krevus | Secure Portals & AI Automation for CPA, Fintech & Real Estate',
+    description: 'Drowning in unsecure emails and manual tasks? We build enterprise secure portals & AI automation for CPA, fintech, & real estate firms. Scale securely today.',
+    images: ['/images/og-default.png'],
   },
 }
 

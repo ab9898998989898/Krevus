@@ -7,8 +7,13 @@ import Link from 'next/link'
 import { AboutClientSections } from './AboutClientSections'
 
 export const metadata = {
-  title: 'About | Krevus',
-  description: 'We are an elite team of engineers building secure portals, AI automation, and digital infrastructure for highly regulated industries.',
+  title: 'About Krevus | US-Based Engineering for Regulated Firms',
+  description: 'Tired of generic agencies that don\'t understand your regulatory needs? Krevus is a US-based engineering team building secure, scalable infrastructure. Meet us.',
+  openGraph: {
+    title: 'About Krevus | US-Based Engineering for Regulated Firms',
+    description: 'Tired of generic agencies that don\'t understand your regulatory needs? Krevus is a US-based engineering team building secure, scalable infrastructure. Meet us.',
+    url: 'https://krevus.org/about',
+  }
 }
 
 const stats = [
@@ -90,6 +95,39 @@ export default function AboutPage() {
         </section>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Krevus",
+            "url": "https://krevus.org",
+            "foundingDate": "2020",
+            "description": "B2B software agency specializing in secure platforms for tax firms, fintech, and real estate.",
+            "hasPart": [
+              {
+                "@type": "Event",
+                "name": "Krevus Founded",
+                "startDate": "2020-01-01",
+                "description": "Krevus was founded to provide enterprise-grade, secure software solutions to tax and accounting firms."
+              },
+              {
+                "@type": "Event",
+                "name": "Fintech & AI Automation Expansion",
+                "startDate": "2022-06-15",
+                "description": "Expanded our service offerings to include custom AI automation and analytics dashboards for fintech startups."
+              },
+              {
+                "@type": "Event",
+                "name": "Real Estate Dashboard Solutions Launch",
+                "startDate": "2024-03-10",
+                "description": "Launched specialized real-time data integrations and dashboard services for enterprise real estate portfolios."
+              }
+            ]
+          })
+        }}
+      />
     </>
   )
 }

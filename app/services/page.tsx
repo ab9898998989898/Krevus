@@ -7,8 +7,13 @@ import Link from 'next/link'
 import { CapabilitiesGrid } from './CapabilitiesGrid'
 
 export const metadata = {
-  title: 'Services — Secure Portals, AI Automation & Dashboards | Krevus',
-  description: 'We replace manual workflows with secure, automated systems that run your firm 24/7.',
+  title: 'Services: Secure Portals, AI & Custom Software | Krevus',
+  description: 'Losing billable hours to manual data entry? Krevus builds custom secure portals & 24/7 AI automation to run your operations flawlessly. Explore our services.',
+  openGraph: {
+    title: 'Services: Secure Portals, AI & Custom Software | Krevus',
+    description: 'Losing billable hours to manual data entry? Krevus builds custom secure portals & 24/7 AI automation to run your operations flawlessly. Explore our services.',
+    url: 'https://krevus.org/services',
+  }
 }
 
 
@@ -120,6 +125,87 @@ export default function ServicesPage() {
         <ServicesCTA />
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "ItemList",
+                "itemListElement": [
+                  {
+                    "@type": "Service",
+                    "position": 1,
+                    "name": "Secure Client Portals",
+                    "description": "Custom-built, secure document and client management portals for tax firms and financial institutions with bank-grade encryption and IRS compliance.",
+                    "provider": { "@type": "Organization", "name": "Krevus" }
+                  },
+                  {
+                    "@type": "Service",
+                    "position": 2,
+                    "name": "AI Automation",
+                    "description": "Streamline repetitive workflows, data entry, and compliance checks with intelligent automation solutions tailored for B2B enterprises.",
+                    "provider": { "@type": "Organization", "name": "Krevus" }
+                  },
+                  {
+                    "@type": "Service",
+                    "position": 3,
+                    "name": "Custom Dashboards",
+                    "description": "Real-time analytics and reporting dashboards integrated with Plaid and internal systems, designed specifically for real estate portfolios and fintech operations.",
+                    "provider": { "@type": "Organization", "name": "Krevus" }
+                  }
+                ]
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Are your custom client portals compliant with IRS e-file security and data privacy standards?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, our secure client portals are built with bank-grade encryption, role-based access controls, and full audit trails to help tax firms meet strict IRS Pub 4557 and FTC Safeguards Rule compliance."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can your AI automation tools integrate with our existing accounting and fintech software?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Absolutely. We specialize in custom API integrations to connect our AI automation workflows directly with tools like Plaid, QuickBooks, and specialized core banking or tax software."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How long does it take to develop a custom analytics dashboard for real estate portfolios?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Most of our custom real estate and fintech dashboards take roughly 4 weeks to deploy, drastically reducing time-to-market compared to standard 6-month development cycles."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do you ensure the security of financial data being processed by AI models?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "We deploy enterprise-grade, closed-loop AI environments. Your data is encrypted in transit and at rest, and is never used to train public foundational models, ensuring strict data residency and confidentiality."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Do you provide ongoing technical support after the custom software is launched?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, we offer ongoing maintenance, security updates, and technical support retainers to ensure your digital infrastructure runs smoothly and scales with your firm."
+                    }
+                  }
+                ]
+              }
+            ]
+          })
+        }}
+      />
     </>
   )
 }

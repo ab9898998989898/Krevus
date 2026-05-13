@@ -27,7 +27,7 @@ export function Hero({ headline, subheadline, primaryCta, secondaryCta, imageUrl
   useGsapTypewriter(
     typewriterSub ? subRef : { current: null },
     subheadline,
-    1.2
+    0.5
   )
 
   return (

@@ -6,8 +6,13 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Case Studies — Digital Infrastructure Results | Krevus',
-  description: 'See how we transform disjointed workflows into unified digital experiences for our clients.',
+  title: 'Case Studies: Proven ROI for CPA, Fintech & Real Estate | Krevus',
+  description: 'Skeptical of tech promises with no ROI? See how Krevus transforms broken workflows into secure portals and AI systems that save thousands of hours. View results.',
+  openGraph: {
+    title: 'Case Studies: Proven ROI for CPA, Fintech & Real Estate | Krevus',
+    description: 'Skeptical of tech promises with no ROI? See how Krevus transforms broken workflows into secure portals and AI systems that save thousands of hours. View results.',
+    url: 'https://krevus.org/case-studies',
+  }
 }
 
 const industries = [
@@ -67,6 +72,37 @@ export default function CaseStudiesPage() {
         </section>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Krevus Client Case Studies",
+            "description": "Success stories and case studies from our work building software for tax firms, fintechs, and real estate businesses.",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "https://krevus.org/case-studies/cpa-firm-portal",
+                "name": "Secure Client Portal: Onboarding from 3 days to 20 minutes for a Mid-sized CPA Firm"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "https://krevus.org/case-studies",
+                "name": "Fintech Analytics Dashboard: Internal dashboards shipped in 4 weeks, raising $1.2M"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "url": "https://krevus.org/case-studies",
+                "name": "Real Estate AI Automation: AI calling agent qualifies leads at 9pm on Sundays"
+              }
+            ]
+          })
+        }}
+      />
     </>
   )
 }

@@ -8,9 +8,13 @@ import { Lock, Bot } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Digital Infrastructure for Tax & CPA Firms | Krevus',
-  description: 'Stop emailing sensitive documents. We build secure client portals with automated onboarding for tax firms.',
-  openGraph: { url: 'https://krevus.org/industries/tax-firms' },
+  title: 'Secure Portals & AI Automation for CPA Firms | Krevus',
+  description: 'Risking firm compliance with email attachments? Krevus builds IRS-compliant secure client portals and AI intake systems for CPA firms. Book your strategy call.',
+  openGraph: { 
+    title: 'Secure Portals & AI Automation for CPA Firms | Krevus',
+    description: 'Risking firm compliance with email attachments? Krevus builds IRS-compliant secure client portals and AI intake systems for CPA firms. Book your strategy call.',
+    url: 'https://krevus.org/industries/tax-firms' 
+  },
 }
 
 const taxFeatures = [

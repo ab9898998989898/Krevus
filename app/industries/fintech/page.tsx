@@ -7,9 +7,13 @@ import { BarChart2, Shield } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Digital Infrastructure for Fintech | Krevus',
-  description: 'Build compliant, fast, and connected platforms without a 12-month internal roadmap.',
-  openGraph: { url: 'https://krevus.org/industries/fintech' },
+  title: 'Fintech Dashboards & Compliant Architecture | Krevus',
+  description: 'Blocked by slow dev cycles and compliance hurdles? Krevus builds secure fintech dashboards & API integrations in weeks, not months. Accelerate your roadmap.',
+  openGraph: { 
+    title: 'Fintech Dashboards & Compliant Architecture | Krevus',
+    description: 'Blocked by slow dev cycles and compliance hurdles? Krevus builds secure fintech dashboards & API integrations in weeks, not months. Accelerate your roadmap.',
+    url: 'https://krevus.org/industries/fintech' 
+  },
 }
 
 const fintechFeatures = [
