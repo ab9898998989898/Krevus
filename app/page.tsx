@@ -18,13 +18,12 @@ export default function Home() {
     <>
       <Header />
       <main className="flex min-h-screen flex-col">
-        <Hero 
+        <Hero
           headline="Your firm is losing clients to slow processes. We fix that."
           subheadline="Krevus builds secure portals, AI automation, and digital infrastructure for tax firms, fintech companies, and real estate businesses."
           primaryCta={{ label: 'Book a Discovery Call', href: process.env.NEXT_PUBLIC_CALENDLY_URL || '/contact' }}
           secondaryCta={{ label: 'See Our Work', href: '/case-studies' }}
           imageUrl="/images/hero_dashboard.png"
-          typewriterSub
         />
         <ServicesStrip />
         <TechMarquee />
