@@ -55,7 +55,7 @@ export function ServiceCard({ icon: Icon, title, description, href }: ServiceCar
 
       <div className="w-12 h-12 rounded-lg bg-[color:var(--accent-dim)] flex items-center justify-center mb-6 text-[color:var(--accent)]">
         <Icon size={24} />
-      </div
+      </div>
 
       <h3 ref={titleRef} className="text-h3 mb-3 will-change-transform">{title}</h3>
       <p className="text-base text-[color:var(--text-body)] mb-8 flex-grow">{description}</p>
