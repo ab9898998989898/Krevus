@@ -70,8 +70,8 @@ export function Gallery() {
     return () => ctx.revert();
   }, []);
 
-  const handleMouseEnter = (e: React.MouseEvent, ref: React.RefObject<HTMLDivElement>) => {
-    gsap.to(ref.current, {
+  const handleMouseEnter = (el: HTMLDivElement) => {
+    gsap.to(el, {
       scale: 1.05,
       rotate: 2,
       duration: 0.4,
@@ -79,8 +79,8 @@ export function Gallery() {
     });
   };
 
-  const handleMouseLeave = (e: React.MouseEvent, ref: React.RefObject<HTMLDivElement>) => {
-    gsap.to(ref.current, {
+  const handleMouseLeave = (el: HTMLDivElement) => {
+    gsap.to(el, {
       scale: 1,
       rotate: 0,
       duration: 0.4,
@@ -101,18 +101,22 @@ export function Gallery() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {works.map((work, i) => {
-            const itemRef = useRef<HTMLDivElement>(null);
-            // Store ref in array for GSAP
-            if (!itemsRef.current.includes(itemRef)) {
-              itemsRef.current.push(itemRef);
-            }
-
             return (
               <div
                 key={i}
-                ref={itemRef}
-                onMouseEnter={(e) => handleMouseEnter(e, itemRef)}
-                onMouseLeave={(e) => handleMouseLeave(e, itemRef)}
+                ref={(el) => {
+                  if (el) {
+                    itemsRef.current[i] = el;
+                  }
+                }}
+                onMouseEnter={() => {
+                  const el = itemsRef.current[i];
+                  if (el) handleMouseEnter(el);
+                }}
+                onMouseLeave={() => {
+                  const el = itemsRef.current[i];
+                  if (el) handleMouseLeave(el);
+                }}
                 className={`group relative aspect-[4/3] rounded-2xl overflow-hidden border border-[color:var(--border)] will-change-transform ${work.color}`}
               >
                 <img
