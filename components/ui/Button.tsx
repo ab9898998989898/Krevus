@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useImperativeHandle, forwardRef } from 'react'
 import Link from 'next/link'
 import { useGsapMagneticButton } from '@/hooks/useGsapMagneticButton'
 
@@ -14,7 +14,7 @@ interface ButtonProps {
   magnetic?: boolean
 }
 
-export function Button({
+export const Button = forwardRef<any, ButtonProps>(({
   variant,
   size = 'md',
   href,
@@ -22,8 +22,10 @@ export function Button({
   children,
   className = '',
   magnetic = false,
-}: ButtonProps) {
+}, forwardedRef) => {
   const btnRef = useRef<HTMLButtonElement | HTMLAnchorElement | null>(null)
+
+  useImperativeHandle(forwardedRef, () => btnRef.current)
 
   // Conditionally call hooks is bad practice, but since `magnetic` is usually static per component instance, 
   // we can use a wrapper or just always call it but exit early inside the hook.
@@ -63,4 +65,7 @@ export function Button({
       {children}
     </button>
   )
-}
+})
+
+Button.displayName = 'Button'
+
