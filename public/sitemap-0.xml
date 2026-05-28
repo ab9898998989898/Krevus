@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>http://localhost:3000</loc><lastmod>2026-05-28T19:26:46.763Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/about</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/automating-lease-renewals-a-software-guide-for-real-estate-brokerages</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/build-vs-buy-launching-a-custom-fintech-dashboard-on-a-budget</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/cpa-secure-document-sharing</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/how-commercial-real-estate-firms-use-automated-tenant-portals</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/integrating-plaid-with-next-js-a-guide-for-startup-founders</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/real-estate-data-visualization-building-custom-market-dashboards</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/scaling-your-tax-advisory-practice-with-custom-client-dashboards</loc><lastmod>2026-05-28T19:26:46.764Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/security-risks-of-no-code-tools-in-financial-technology</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/soc-2-compliance-checklist-for-accounting-firm-client-portals</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/the-5-best-client-onboarding-workflows-for-tax-preparers-in-2026</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/the-roi-of-custom-property-management-software-for-mid-sized-brokerages</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/why-cpa-firms-should-stop-emailing-tax-documents-and-what-to-use-instead</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/blog/why-vcs-look-for-proprietary-tech-stacks-in-fintech-seed-rounds</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/briqly</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/case-studies</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/case-studies/cpa-firm-portal</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/case-studies/fintech-dashboard</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/case-studies/real-estate-ai-automation</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/contact</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/industries</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/industries/fintech</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/industries/real-estate</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/industries/tax-firms</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/robots.txt</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/services</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>http://localhost:3000/sitemap.xml</loc><lastmod>2026-05-28T19:26:46.765Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

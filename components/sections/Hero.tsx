@@ -24,6 +24,32 @@ export function Hero({ headline, subheadline, primaryCta, secondaryCta, imageUrl
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
+      // Floating blobs animation
+      gsap.to('.hero-blob-1', {
+        xPercent: 15,
+        yPercent: 10,
+        duration: 12,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
+      gsap.to('.hero-blob-2', {
+        xPercent: -15,
+        yPercent: 15,
+        duration: 15,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
+      gsap.to('.hero-blob-3', {
+        xPercent: 10,
+        yPercent: -15,
+        duration: 14,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      });
+
       // Entry Timeline
       const tl = gsap.timeline({
         defaults: { ease: 'power2.inOut', duration: 0.8 }
@@ -84,8 +110,15 @@ export function Hero({ headline, subheadline, primaryCta, secondaryCta, imageUrl
       ref={containerRef}
       className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-black"
     >
-      {/* Full-viewport background video */}
-      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+      {/* Full-viewport background video & fallback mesh gradients */}
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden bg-black">
+        {/* Animated premium tech gradient meshes */}
+        <div className="absolute inset-0 opacity-40 mix-blend-screen pointer-events-none">
+          <div className="hero-blob-1 absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.3)_0%,transparent_70%)] blur-[120px]" />
+          <div className="hero-blob-2 absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.35)_0%,transparent_70%)] blur-[120px]" />
+          <div className="hero-blob-3 absolute top-[25%] left-[30%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(245,158,11,0.15)_0%,transparent_70%)] blur-[100px]" />
+        </div>
+
         <video
           ref={videoRef}
           src={videoUrl}
@@ -94,11 +127,14 @@ export function Hero({ headline, subheadline, primaryCta, secondaryCta, imageUrl
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-cover will-change-transform"
+          className="w-full h-full object-cover opacity-60 mix-blend-lighten will-change-transform"
+          onError={(e) => {
+            (e.target as HTMLVideoElement).style.display = 'none';
+          }}
         />
         {/* Overlay gradient fade to transparent */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-[color:var(--bg-primary)]/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[color:var(--bg-primary)]/40 pointer-events-none" />
       </div>
 
       <div className="container relative z-10 max-w-[900px] text-center mx-auto px-6">
