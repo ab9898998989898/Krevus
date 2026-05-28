@@ -8,7 +8,7 @@ interface ButtonProps {
   variant: 'primary' | 'outline' | 'ghost' | 'amber'
   size?: 'sm' | 'md' | 'lg'
   href?: string
-  onClick?: () => void
+  onClick?: React.MouseEventHandler<any>
   children: React.ReactNode
   className?: string
   magnetic?: boolean
