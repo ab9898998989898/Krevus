@@ -4,6 +4,7 @@ import { TechMarquee } from '@/components/sections/TechMarquee'
 import { ProblemSection } from '@/components/sections/ProblemSection'
 import { IndustriesBlock } from '@/components/sections/IndustriesBlock'
 import { HowItWorksSection } from '@/components/sections/HowItWorksSection'
+import { Gallery } from '@/components/sections/Gallery'
 import { StatsSection } from '@/components/sections/StatsSection'
 import { FeaturedCaseStudy } from '@/components/sections/FeaturedCaseStudy'
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
@@ -30,6 +31,7 @@ export default function Home() {
         <ProblemSection />
         <IndustriesBlock />
         <HowItWorksSection />
+        <Gallery />
         <StatsSection />
         <FeaturedCaseStudy />
         <TestimonialsSection />

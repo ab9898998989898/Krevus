@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { StatItem } from '../ui/StatItem'
-import { useGsapFadeIn } from '@/hooks/useGsapFadeIn'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
 
 const stats = [
   { value: 50, suffix: '+', label: 'Projects Delivered' },
@@ -15,11 +15,72 @@ const stats = [
 
 export function StatsSection() {
   const containerRef = useRef<HTMLDivElement>(null)
-  useGsapFadeIn(containerRef)
+  const bgRef = useRef<HTMLDivElement>(null)
+  const [counts, setCounts] = useState(stats.map(() => 0))
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
+
+      // Sequential Count-Up Animation
+      const countTls = stats.map((stat, i) => {
+        const proxy = { val: 0 };
+        return gsap.to(proxy, {
+          val: stat.value,
+          duration: 1.5,
+          ease: 'power2.out',
+          onUpdate: () => {
+            setCounts(prev => {
+              const next = [...prev];
+              next[i] = Math.floor(proxy.val);
+              return next;
+            });
+          },
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+            once: true,
+            markers: true, // Dev only
+          },
+          delay: i * 0.15, // Sequential stagger
+        });
+      });
+
+      // Background Parallax Shift
+      mm.add("(min-width: 768px)", () => {
+        gsap.to(bgRef.current, {
+          backgroundPosition: '50% 100%',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+            markers: true, // Dev only
+          },
+        });
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="relative py-24 border-y border-[color:var(--border)] bg-[color:var(--bg-primary)] overflow-hidden">
-      {/* Glow strip */}
+    <section
+      ref={containerRef}
+      className="relative py-24 border-y border-[color:var(--border)] bg-[color:var(--bg-primary)] overflow-hidden"
+    >
+      {/* Parallax Background Gradient */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 pointer-events-none opacity-30"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(61,90,254,0.15) 0%, transparent 70%)',
+          backgroundSize: '100% 200%',
+          backgroundPosition: '50% 0%'
+        }}
+      />
+
+      {/* Glow strips */}
       <div
         className="absolute inset-x-0 top-0 h-px pointer-events-none"
         style={{ background: 'linear-gradient(90deg, transparent 0%, var(--accent) 40%, var(--accent) 60%, transparent 100%)', opacity: 0.25 }}
@@ -29,17 +90,15 @@ export function StatsSection() {
         style={{ background: 'linear-gradient(90deg, transparent 0%, var(--accent) 40%, var(--accent) 60%, transparent 100%)', opacity: 0.25 }}
       />
 
-      {/* Subtle radial glow center */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(61,90,254,0.04) 0%, transparent 70%)' }}
-      />
-
       <div className="container relative z-10">
-        <div ref={containerRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 text-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 text-center">
           {stats.map((stat, index) => (
-            <div key={index} className="flex justify-center">
-              <StatItem value={stat.value} suffix={stat.suffix} label={stat.label} />
+            <div key={index} className="flex justify-center will-change-contents">
+              <StatItem
+                value={counts[index]}
+                suffix={stat.suffix}
+                label={stat.label}
+              />
             </div>
           ))}
         </div>
